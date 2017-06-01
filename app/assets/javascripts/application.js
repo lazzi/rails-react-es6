@@ -10,7 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+// Use sprockets only to load this file, and react helpers
+//= require_self
+//= require react-server
+//= require react_ujs
+
+window.$ = window.jQuery = global.$ = require('jquery');
+var React = window.React = global.React = require('react');
+require( 'jquery-ujs' );
+require( 'fetch' );
+require( './components' );
